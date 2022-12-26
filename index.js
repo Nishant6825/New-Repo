@@ -6,11 +6,11 @@ const connect = mongoose.connect(url);
 
 connect.then((db)=>{
     console.log("Connected to server");
-    var newDish = Dishes({
+    Dishes.create({
         name: "Nishant",
         description: 'Test'
-    });
-    newDish.save().then((dish)=>{
+    })
+    .then((dish)=>{
         console.log(dish)
         return Dishes.find({}).exec();
 
