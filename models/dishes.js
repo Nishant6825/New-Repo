@@ -6,8 +6,8 @@ const Schema = mongoose.Schema;
 var commentSchema = new Schema({
     rating:  {
         type: Number,
-        min: 1,
-        max: 10,
+        min: 1, 
+        max: 566,
         required: true
     },
     comment:  {
@@ -15,8 +15,8 @@ var commentSchema = new Schema({
         required: true
     },
     author:  {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true
